@@ -6,9 +6,9 @@ export const loadCategory = () => ({
     type: LOAD_CATEGORY
 });
 
-export const loadCategorySuccess = (products) => ({
+export const loadCategorySuccess = (categories) => ({
     type: LOAD_CATEGORY_SUCCESS,
-    payload: {products}
+    payload: {categories}
 });
 
 export const loadCategoryFailed = (error) => ({

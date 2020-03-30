@@ -1,25 +1,29 @@
-import { fork, call, takeLatest } from "redux-saga/effects";
-import { LOAD_PRODUCTS } from "../actions/productActions";
+import { fork, call, takeLatest, put } from "redux-saga/effects";
+import {
+  LOAD_PRODUCTS,
+  loadProductsSuccess,
+  loadProductsFailed
+} from "../actions/productActions";
 import { API_ENDPOINTS } from "./../../../config/apiEndpoints";
 import RequestService from "../../shared/utility/restUtils";
-import { LOAD_CATEGORY } from "../actions/categoryActions";
+import { LOAD_CATEGORY, loadCategoryFailed, loadCategorySuccess } from "../actions/categoryActions";
 //===============Worker========
 function* loadProducts() {
   try {
     let url = API_ENDPOINTS.getProducts;
     const products = yield call(RequestService.fetch, url);
-    return { isError: false, products };
+    yield put(loadProductsSuccess(products.data));
   } catch (error) {
-    return { isError: true, error: error.message };
+    yield put(loadProductsFailed(error.message));
   }
 }
 function* loadCategories() {
   try {
     let url = API_ENDPOINTS.getCategories;
     const categories = yield call(RequestService.fetch, url);
-    return { isError: false, categories };
+    yield put(loadCategorySuccess(categories.data));
   } catch (error) {
-    return { isError: true, error: error.message };
+    yield put(loadCategoryFailed(error.message));
   }
 }
 //===============Watchers==============

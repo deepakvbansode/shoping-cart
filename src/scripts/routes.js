@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import { HomeComponent } from "./components/Home";
-import { ProductDetailsComponent } from "./components/ProductDetails";
-import { CheckoutComponent } from "./components/Checkout";
+import  HomeComponent  from "./components/HomeComponent";
+import { ProductDetailsComponent } from "./components/ProductDetailsComponent";
+import { CheckoutComponent } from "./components/CheckoutComponent";
 export const AppRoutes = () => (
   <Router>
     <Switch>

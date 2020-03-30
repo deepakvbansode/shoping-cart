@@ -16,7 +16,7 @@ import {
       case LOAD_CATEGORY_SUCCESS:
         return Object.assign({}, state, {
           isLoading: false,
-          data: payload.products
+          data: payload.categories
         });
       case LOAD_CATEGORY_FAILED:
         return Object.assign({}, state, {

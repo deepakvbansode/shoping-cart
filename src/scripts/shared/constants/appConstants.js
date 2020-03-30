@@ -1,0 +1,10 @@
+export const SORT_BY_A_TO_Z = "SORT_BY_A_TO_Z";
+export const SORT_BY_Z_TO_A = "SORT_BY_Z_TO_A";
+export const SORT_BY_LOW_PRICE = "SORT_BY_LOW_PRICE";
+export const SORT_BY_HIGH_PRICE = "SORT_BY_HIGH_PRICE";
+export const SORT_TYPES = {
+    [SORT_BY_A_TO_Z]:SORT_BY_A_TO_Z,
+    [SORT_BY_Z_TO_A]:SORT_BY_Z_TO_A,
+    [SORT_BY_LOW_PRICE]:SORT_BY_LOW_PRICE,
+    [SORT_BY_HIGH_PRICE]:SORT_BY_HIGH_PRICE,
+}
